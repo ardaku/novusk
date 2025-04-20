@@ -2,19 +2,19 @@
 name = "novusk"
 version = "3.0.2"
 authors = ["Nathan McMillan <nathanmcmillan54@gmail.com>"]
-edition = "2021"
+edition = "2024"
 license = "MIT"
 publish = false
 
 [[bin]]
 name = "novusk_kernel"
 path = "src/main.rs"
-edition = "2021"
+edition = "2024"
 
 [lib]
 name = "novusk"
 path = "src/lib.rs"
-edition = "2021"
+edition = "2024"
 # Remove the comment if you're going to link Novusk to something else
 # crate-type = ["staticlib"]
 

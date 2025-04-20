@@ -94,12 +94,12 @@ pub mod drivers {
 }
 
 
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn initramfs_main() {
 
 }
 
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn kernel_main() {
 
 }
