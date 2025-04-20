@@ -9,10 +9,12 @@ pub const BOOT: &'static str = "BIOS";
 #[cfg(feature = "uefi_boot")]
 pub const BOOT: &'static str = "UEFI";
 
+#[cfg(not(any(feature = "uefi_boot", feature = "bios_boot")))]
+pub const BOOT: &'static str = "";
 
 pub unsafe fn die() -> ! {
     panic!("Kernel died");
-    loop { hlt(); }
+    hlt()
 }
 
 #[no_mangle]

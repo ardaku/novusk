@@ -5,7 +5,6 @@ pub static mut BRAND: &'static str = "Unknown";
 
 unsafe fn unknown_cpu() {
     set_status("not ok");
-    BRAND = BRAND;
 }
 
 unsafe fn its_amd() {

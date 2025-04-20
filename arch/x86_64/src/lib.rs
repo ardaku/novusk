@@ -28,7 +28,7 @@ pub fn panic(_info: &PanicInfo) -> ! {
     use time::cpu::CPU_TIME;
 
     printk!("\nKernel panicked:\n");
-    printk!("    Message: {:?}\n", _info.message().unwrap());
+    printk!("    Message: {:?}\n", _info.message());
     printk!("    Location: {:?}\n", _info.location().unwrap());
 
 
