@@ -29,7 +29,7 @@ impl VgaModes {
     }
 }
 
-pub extern "C" fn vga_switch(mode: usize) {
+pub extern "Rust" fn vga_switch(mode: usize) {
     let vgamode = convert_usize_to_vgamode(mode);
 
     vgamode.switch();

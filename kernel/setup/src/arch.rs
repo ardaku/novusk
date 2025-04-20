@@ -2,7 +2,7 @@ use crate::SetupReturn;
 
 pub trait ArchKernelSetup {
     unsafe fn device_init(&self) -> SetupReturn {
-        extern "C" {
+        extern "Rust" {
             fn device_init() -> SetupReturn;
         }
 

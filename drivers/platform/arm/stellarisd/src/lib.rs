@@ -32,7 +32,7 @@ impl Device for Stellaris6965 {
 
 #[cfg(feature = "stellaris_6965")]
 #[no_mangle]
-pub unsafe extern "C" fn device_init() -> (Result<(), &'static str>, &'static str) {
+pub unsafe extern "Rust" fn device_init() -> (Result<(), &'static str>, &'static str) {
     let cp = cortex_m::Peripherals::steal();
 
     let mut error = false;
@@ -47,4 +47,4 @@ pub unsafe extern "C" fn device_init() -> (Result<(), &'static str>, &'static st
 }
 
 #[no_mangle]
-pub extern "C" fn rpi2_kernel_init() { }
+pub extern "Rust" fn rpi2_kernel_init() { }

@@ -95,11 +95,11 @@ pub mod drivers {
 
 
 #[unsafe(no_mangle)]
-pub extern "C" fn initramfs_main() {
+pub extern "Rust" fn initramfs_main() {
 
 }
 
 #[unsafe(no_mangle)]
-pub extern "C" fn kernel_main() {
+pub extern "Rust" fn kernel_main() {
 
 }

@@ -13,7 +13,7 @@ pub(crate) fn start_kernel_initramfs() {
 }
 
 pub(crate) unsafe fn start_custom_initramfs() {
-    extern "C" {
+    extern "Rust" {
         fn initramfs_main();
     }
 

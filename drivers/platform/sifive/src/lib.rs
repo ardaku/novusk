@@ -45,7 +45,7 @@ impl LoFiveBoard {
 }
 
 #[no_mangle]
-pub extern "C" fn device_init() -> (Result<(), &'static str>, &'static str) {
+pub extern "Rust" fn device_init() -> (Result<(), &'static str>, &'static str) {
     #[cfg(feature = "hifive")]
     let mut dev = HiFiveBoard::new();
 

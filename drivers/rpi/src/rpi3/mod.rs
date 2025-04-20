@@ -8,7 +8,7 @@ pub mod led;
 
 #[no_mangle]
 // #[export_name = "device_init"]
-pub extern "C" fn device_init() -> (Result<(), &'static str>, &'static str) {
+pub extern "Rust" fn device_init() -> (Result<(), &'static str>, &'static str) {
     let mut pi = Rpi3::new();
     pi.init();
 

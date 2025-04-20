@@ -7,7 +7,7 @@ pub mod registers;
 pub mod mb;
 pub mod uart;
 
-extern "C" {
+extern "Rust" {
     static mut BOARD: Board;
     fn rpi2_kernel_init();
 }

@@ -21,7 +21,7 @@ pub mod board {
 }
 
 #[no_mangle]
-pub extern "C" fn device_init() -> (Result<(), &'static str>, &'static str) {
+pub extern "Rust" fn device_init() -> (Result<(), &'static str>, &'static str) {
     let mut peripherals = Peripherals::take();
 
     if peripherals.is_none() {

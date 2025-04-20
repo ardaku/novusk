@@ -7,7 +7,7 @@ pub const WHITE: usize = HexColors::White as usize;
 pub const LIGHT_GRAY: usize = HexColors::LightGray as usize;
 
 #[no_mangle]
-pub extern "C" fn graphics_write(x: usize, y: usize, color: usize, string: &str) {
+pub extern "Rust" fn graphics_write(x: usize, y: usize, color: usize, string: &str) {
     #[cfg(target_arch = "aarch64")]
     let armfb = crate::a64::A64Fb::new();
 
@@ -18,7 +18,7 @@ pub extern "C" fn graphics_write(x: usize, y: usize, color: usize, string: &str)
 }
 
 #[no_mangle]
-pub extern "C" fn graphics_pixel(x: usize, y: usize, color: usize) {
+pub extern "Rust" fn graphics_pixel(x: usize, y: usize, color: usize) {
     #[cfg(target_arch = "aarch64")]
     let armfb = crate::a64::A64Fb::new();
 

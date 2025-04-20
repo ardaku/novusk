@@ -15,7 +15,7 @@ pub unsafe fn aarch64_kernel_init() {
     kmain::kernel_init();
     kinfo!("Novusk initialized\n");
 
-    extern "C" {
+    extern "Rust" {
         fn kernel_main();
     }
 

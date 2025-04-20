@@ -1,7 +1,6 @@
 use core::fmt::Arguments;
 
 #[no_mangle]
-#[export_name = "arch_printk"]
 pub fn _rv_printk(fmt: Arguments) -> Arguments {
     #[cfg(any(feature = "hifive", feature = "lofive"))]
     sifive::sprint!("{}", fmt);
@@ -10,7 +9,7 @@ pub fn _rv_printk(fmt: Arguments) -> Arguments {
 }
 
 #[no_mangle]
-pub extern "C" fn kmain_printk(fmt: Arguments) {
+pub extern "Rust" fn kmain_printk(fmt: Arguments) {
     _rv_printk(fmt);
 }
 

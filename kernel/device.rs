@@ -2,7 +2,7 @@
 
 pub static mut DEVICE_NAME: &'static str = "Unknown";
 
-extern "C" {
+extern "Rust" {
     pub fn device_init() -> (Result<(), &'static str>, &'static str);
 }
 

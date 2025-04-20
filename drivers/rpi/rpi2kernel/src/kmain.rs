@@ -1,5 +1,5 @@
 pub unsafe fn start_kernel_main() {
-    extern "C" {
+    extern "Rust" {
         fn kernel_main();
         fn initramfs_main();
     }

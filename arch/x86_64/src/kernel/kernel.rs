@@ -6,7 +6,7 @@ use libcolor::vga_colors::Color;
 use crate::kernel::vga::color::ColorCode;
 
 #[no_mangle]
-pub extern "C" fn writes(s: &str) {
+pub extern "Rust" fn writes(s: &str) {
     let mut writer = VgaWriter::new(VGA_ADDRESS, BUFFER_WIDTH, BUFFER_HEIGHT, ColorCode::new(Color::LightGray, Color::Black));
 
     writer.write_string(s);

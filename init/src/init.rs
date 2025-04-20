@@ -34,7 +34,7 @@ impl Kernel {
     }
 
     pub unsafe fn net_init(&mut self) {
-        extern "C" {
+        extern "Rust" {
             fn ethernet_init();
             fn wireless_init();
         }

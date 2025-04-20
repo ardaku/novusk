@@ -4,7 +4,7 @@ use crate::boot::main::main;
 use crate::mm::{early_memory_init, heap_alloc::allocator_init};
 
 #[no_mangle]
-pub unsafe extern "C" fn bootloader_start_novusk(bootinfo: &'static BootInfo) -> ! {
+pub unsafe extern "Rust" fn bootloader_start_novusk(bootinfo: &'static BootInfo) -> ! {
     x86_printk!("Booted with bootloader rs\n");
 
     early_memory_init(bootinfo);

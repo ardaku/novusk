@@ -4,7 +4,7 @@ use crate::boot::init::init_arm_kernel;
 use crate::kernel::io::serial_io_init;
 
 #[no_mangle]
-pub extern "C" fn bmain() -> ! {
+pub extern "Rust" fn bmain() -> ! {
     unsafe { serial_io_init(); }
     arm32_printk!("Starting kernel...\n\n");
 

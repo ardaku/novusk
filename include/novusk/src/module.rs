@@ -4,7 +4,7 @@ use crate::printk;
 macro_rules! module_init {
     ($km_name_init:ident, $km_name_start:ident) => {
         #[no_mangle]
-        pub extern "C" fn $km_name_init() {
+        pub extern "Rust" fn $km_name_init() {
             $km_name_start();
         }
     };
@@ -14,7 +14,7 @@ macro_rules! module_init {
 macro_rules! module_end {
    ($km_name_end:ident, $km_name_finish:ident) => {
         #[no_mangle]
-        pub extern "C" fn $km_name_end() {
+        pub extern "Rust" fn $km_name_end() {
             $km_name_finish();
         }
     };
@@ -23,7 +23,7 @@ macro_rules! module_end {
 #[macro_export]
 macro_rules! start_module {
     ($($km_name_init:ident)*, $($km_name_end:ident)*) => {
-        extern "C" {
+        extern "Rust" {
             fn $($km_name_init)*();
             fn $($km_name_end)*();
         }
@@ -50,7 +50,7 @@ macro_rules! v4_module_init {
     ($module_type:pat, $km_name_init:ident, $km_name_start:ident) => {
         #[export_name = stringify!([< $module_type _init >])]
         #[no_mangle]
-        pub extern "C" fn $km_name_init() {
+        pub extern "Rust" fn $km_name_init() {
             unsafe { $km_name_start(); }
         }
     };

@@ -2,12 +2,12 @@ use core::fmt::{Arguments, Write};
 use super::io::IO;
 
 #[no_mangle]
-pub extern "C" fn arch_printk(fmt: Arguments) {
+pub extern "Rust" fn arch_printk(fmt: Arguments) {
     unsafe { IO.write_fmt(fmt); }
 }
 
 #[no_mangle]
-pub extern "C" fn _kernel_main_print(fmt: Arguments) {
+pub extern "Rust" fn _kernel_main_print(fmt: Arguments) {
 
 }
 

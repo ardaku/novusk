@@ -3,14 +3,14 @@ use novusk_syscalls::{SysCall, SysCallTable};
 pub const WRITE: u32 = 4;
 pub const SLEEP: u32 = 24;
 
-extern "C" {
+extern "Rust" {
     pub static mut SYSCALL_TABLE: SysCallTable;
     fn sys_write(byte: u8, arg2: u8, arg3: u8) -> u8;
 }
 
 #[cfg(feature = "cortex_m")]
 #[no_mangle]
-pub unsafe extern "C" fn sys_sleep(sec: u8, arg2: u8, arg3: u8) -> u8 {
+pub unsafe extern "Rust" fn sys_sleep(sec: u8, arg2: u8, arg3: u8) -> u8 {
     use cortex_m::{delay::Delay, peripheral::Peripherals};
 
     let peripherals = Peripherals::steal();

@@ -40,7 +40,7 @@ unsafe fn fs_init() {
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn kernel_init() {
+pub unsafe extern "Rust" fn kernel_init() {
     let mut configs = KERNEL.lock().kernel_configs();
     kinfo!("Got kernel configurations\n");
 

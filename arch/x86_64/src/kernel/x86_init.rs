@@ -42,7 +42,7 @@ pub unsafe fn x86_kernel_init() {
     printk!("Setting up after kernel...\n");
     after_kernel_setup();
 
-    extern "C" { fn kernel_main(); }
+    extern "Rust" { fn kernel_main(); }
 
     kernel_main();
 }

@@ -4,7 +4,7 @@ pub use armfb::{graphics_pixel, graphics_write};
 pub struct GpuGraphics;
 
 #[cfg(not(target_arch = "arm"))]
-extern "C" {
+extern "Rust" {
     pub fn graphics_write(x: usize, y: usize, color: usize, string: &str);
     pub fn graphics_pixel(x: usize, y: usize, color: usize);
 }

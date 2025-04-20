@@ -54,7 +54,7 @@ impl ArchKernelSetup for RiscvKernel {
 }
 
 unsafe fn start_main() {
-    extern "C" {
+    extern "Rust" {
         fn kernel_main();
     }
 

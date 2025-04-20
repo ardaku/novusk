@@ -4,7 +4,7 @@
 macro_rules! define_led_blink_function {
     ($blink:ident) => {
         #[no_mangle]
-        pub extern "C" fn led_blink(sleep: usize) {
+        pub extern "Rust" fn led_blink(sleep: usize) {
             $blink(sleep);
         }
     };
@@ -14,7 +14,7 @@ macro_rules! define_led_blink_function {
 macro_rules! define_elf_starter_function {
     ($elf_starter:ident) => {
         #[no_mangle]
-        pub extern "C" fn start_elf_file(file: &str) {
+        pub extern "Rust" fn start_elf_file(file: &str) {
             $elf_starter(file);
         }
     };
@@ -34,7 +34,7 @@ macro_rules! define_syscall {
 macro_rules! define_ethernet_init {
     ($init:ident) => {
         #[no_mangle]
-        pub extern "C" fn ethernet_init() {
+        pub extern "Rust" fn ethernet_init() {
             let i: fn() = $init;
             i();
         }
@@ -45,7 +45,7 @@ macro_rules! define_ethernet_init {
 macro_rules! define_wireless_init {
     ($init:ident) => {
         #[no_mangle]
-        pub extern "C" fn wireless_init() {
+        pub extern "Rust" fn wireless_init() {
             let w: fn() = $init;
             w();
         }
@@ -56,7 +56,7 @@ macro_rules! define_wireless_init {
 macro_rules! define_graphics_pixel {
     ($pixel_fun:ident) => {
         #[no_mangle]
-        pub extern "C" pixel(x: usize, y: usize, color: usize) {
+        pub extern "Rust" pixel(x: usize, y: usize, color: usize) {
             let pixel: fn(usize, usize, usize) = $pixel_fun;
             pixel();
         }

@@ -15,6 +15,6 @@ pub mod modules;
 pub mod version;
 
 #[no_mangle]
-pub extern "C" fn kmain_printk(fmt: core::fmt::Arguments) {
+pub extern "Rust" fn kmain_printk(fmt: core::fmt::Arguments) {
 
 }

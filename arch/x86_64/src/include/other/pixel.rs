@@ -26,7 +26,7 @@ impl PixelDrawer {
 
 #[link_name = "apixel"]
 #[no_mangle]
-pub extern "C" fn _vga_pixel(color: Color, x: usize, y: usize) {
+pub extern "Rust" fn _vga_pixel(color: Color, x: usize, y: usize) {
     let mut drawer = PixelDrawer {
         x_pos: x,
         y_pos: y,

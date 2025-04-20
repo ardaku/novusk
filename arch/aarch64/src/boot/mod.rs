@@ -15,7 +15,7 @@ pub unsafe extern "C" fn aarch64_boot_setup() -> ! {
     aarch64_printk!("Starting kernel...\n\n");
     aarch64_kernel_init();
 
-    panic!("Nothing to run");
+    panic!("Nothing to run")
 }
 
 global_asm!(include_str!("boot64.S"));

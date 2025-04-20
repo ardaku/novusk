@@ -11,7 +11,7 @@ pub fn display_init() {
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn rpi2_kernel_init() {
+pub unsafe extern "Rust" fn rpi2_kernel_init() {
     display_init();
     kinfo!("Frame buffer and console initialized\n");
 

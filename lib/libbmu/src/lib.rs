@@ -10,6 +10,6 @@ pub mod time;
 pub use time::Time;
 
 pub unsafe fn bmu_init() {
-    extern "C" { fn kernel_main(); }
+    extern "Rust" { fn kernel_main(); }
     kernel_main();
 }

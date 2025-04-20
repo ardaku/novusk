@@ -6,7 +6,7 @@ use core::fmt::Arguments;
 
 static mut KMAIN_PRINT: bool = false;
 
-extern "C" {
+extern "Rust" {
     pub(crate) fn arch_printk(fmt: Arguments);
     pub(crate) fn kmain_printk(fmt: Arguments);
 }
